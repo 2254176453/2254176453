@@ -1,0 +1,166 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'zhongshen.dart';
+import 'yuyue.dart';
+import 'wuganhuandian.dart';
+
+class ShouYe extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+        appBar: AppBar(title: Text('蒂亚换电')),
+        body: ListView(
+          children: [
+            Image.asset('images/3.0x/2.png'),
+            Container(
+              child: ListTile(
+                title: Text(
+                  '三大核心',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                subtitle: Text(
+                  '核心技术 质保服务',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              height: 100,
+              width: 200,
+            ),
+            GridView.count(
+              mainAxisSpacing: 0,
+              shrinkWrap: true,
+              crossAxisCount: 3,
+              crossAxisSpacing: 10,
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'images/4.0x/轻型便携.png',
+                        scale: 2.0,
+                      ),
+                      ListTile(
+                        title: Text(
+                          '轻型便携',
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: Text(
+                          '时间短成本低',
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'images/4.0x/终身免费.png',
+                        scale: 2.0,
+                      ),
+                      ListTile(
+                        title: Text(
+                          '终身免费',
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: Text(
+                          '电池质保服务',
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'images/4.0x/上门服务.png',
+                        scale: 2.0,
+                      ),
+                      ListTile(
+                        title: Text(
+                          '上门服务',
+                          textAlign: TextAlign.center,
+                        ),
+                        subtitle: Text(
+                          '极致换电体验',
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              child: Image.asset('images/2.0x/5.png'),
+            ),
+            Container(
+              height: 250,
+              width: 300,
+              color: Colors.white70,
+              child: SizedBox(
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => new yuyue()));
+                  },
+                  child: Image.asset('images/2.0x/预约换电.png'),
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Container(
+              height: 250,
+              width: 300,
+              color: Colors.white70,
+              child: SizedBox(
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => new zhongshen()));
+                  },
+                  child: Image.asset('images/2.0x/电池终身质保.png'),
+                  color: Colors.white,
+                ),
+                
+              ),
+            ),
+            Container(
+              height: 250,
+              width: 300,
+              color: Colors.white70,
+              child: SizedBox(
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => new wuganhuandian()));
+                  },
+                  child: Image.asset('images/2.0x/无感换电.png'),
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Container(
+              
+            )
+          ],
+          
+        )
+        
+        );
+        
+  }
+}
